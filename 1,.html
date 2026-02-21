@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mayi老师我超爱！！,</title>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { background:#f0f0f0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; padding:16px; display:flex; justify-content:center; min-height:100vh; }
+        .card { max-width:400px; width:100%; background:white; border-radius:20px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.08); margin:20px 0; }
+        .image-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:2px; background:#f0f0f0; padding:2px; }
+        .image-grid img { width:100%; height:180px; object-fit:cover; display:block; }
+        .user-info { display:flex; align-items:center; padding:16px 16px 8px; }
+        .avatar { width:42px; height:42px; border-radius:50%; background:#ccc; margin-right:12px; background-image:url('https://via.placeholder.com/42'); background-size:cover; }
+        .user-name { font-weight:600; font-size:15px; color:#1e1e1e; }
+        .user-meta { font-size:12px; color:#777; margin-top:2px; }
+        .title { font-weight:700; font-size:18px; line-height:1.4; margin:8px 16px 6px; color:#1e1e1e; }
+        .content { font-size:15px; line-height:1.6; color:#2e2e2e; margin:0 16px 12px; white-space:pre-line; }
+        .topics { display:flex; flex-wrap:wrap; gap:8px 12px; margin:0 16px 20px; }
+        .topic { color:#2563eb; font-size:14px; font-weight:500; }
+        .topic::before { content:"#"; }
+        .publish-btn { background-color:#ff5a5f; color:white; border:none; width:calc(100% - 32px); margin:0 16px 24px; padding:14px 0; border-radius:30px; font-size:16px; font-weight:600; display:flex; align-items:center; justify-content:center; gap:6px; cursor:pointer; }
+        .footer-note { text-align:center; font-size:12px; color:#aaa; margin-bottom:16px; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="user-info">
+            <div class="avatar"></div>
+            <div>
+                <div class="user-name">汕头探店小能手</div>
+                <div class="user-meta">纹眉探店·分享</div>
+            </div>
+        </div>
+        <div class="image-grid">< img src="https://pic1.imgdb.cn/item/69996f761f6cae6d41e7c5b2.jpg," alt="图片"></div>
+        <div class="title">Mayi老师我超爱！！,</div>
+        <div class="content">现在开始认真冲冲刺啦～之前基础和强化一直跟着Mayi老师学，真的受益匪浅。这次冲刺课也完全没让人失望，学到很多实用做题技巧嘻嘻嘻！（不是打广，亲测有效！！）继续冲！,</div>
+        <div class="topics"><span class="topic">#专插本政治 #Mayi专插本政治 #Mayi冲刺班 #政治备考
+ #专升本</span></div>
+        <button class="publish-btn" onclick="copyAndOpen()">
+            📋 复制内容并打开小红书一键发布
+        </button>
+        <div class="footer-note">点击按钮后，内容已复制，请打开小红书APP粘贴发布</div>
+    </div>
+    <script>
+        function copyAndOpen() {
+            const title = `Mayi老师我超爱！！,`;
+            const content = `现在开始认真冲冲刺啦～之前基础和强化一直跟着Mayi老师学，真的受益匪浅。这次冲刺课也完全没让人失望，学到很多实用做题技巧嘻嘻嘻！（不是打广，亲测有效！！）继续冲！,`;  // 处理反引号
+            const topics = `#专插本政治 #Mayi专插本政治 #Mayi冲刺班 #政治备考
+ #专升本`;
+            const topicArray = topics.split(',').map(t => '#' + t.trim()).join(' ');
+            const fullText = title + '\n\n' + content + '\n\n' + topicArray;
+            navigator.clipboard.writeText(fullText).then(() => {
+                alert('✅ 内容已复制！现在你可以打开小红书APP，在发布页面长按粘贴。');
+                window.location.href = "snssdk1128://";  // 尝试打开小红书APP
+                setTimeout(() => { window.location.href = "https://www.xiaohongshu.com"; }, 500);
+            }).catch(() => {
+                alert('复制失败，请手动复制内容');
+            });
+        }
+    </script>
+</body>
+</html>
